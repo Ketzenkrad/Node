@@ -2,7 +2,9 @@
 const express = require('express');
 //Подключим пакет, который будет заниматься парсингом body
 const bodyParser = require('body-parser');
-//Переменная приложения
+//Импортируем модуль
+const weatherRequest = require('./requests/weather.request.js');
+//Константа приложения
 const application = express();
 //Вызовем у объекта метод ejs, который поможет нам шаблонизировать HTML
 application.set('view engine', 'ejs');
@@ -23,6 +25,8 @@ application.post('/', (req, res) => {
     const { city } = req.body;
     //Посмотрим в консоли на результат:
     console.log('Result: ' + city);
+    //Вызовем функцию WeatherRequest и передаем туда город
+    weatherRequest(city);
 });
 //Слушаем приложение(порт и коллбэк)
 application.listen(3000, () => {
