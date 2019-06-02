@@ -1,23 +1,25 @@
 {
-  "name": "nodejs-basic",
-  "version": "1.0.0",
-  "description": "\"Тестовые уроки Node.js\"",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "node",
-    "nodejs",
-    "js",
-    "javascript"
-  ],
-  "author": "Ketzenkrad",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "nodemon": "^1.19.1"
-  }
+    "name": "nodejs-basic",
+    "version": "1.0.0",
+    "description": "\"Тестовые уроки Node.js\"",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon index.js",
+        "prod": "node index.js"
+    },
+    "keywords": [
+        "node",
+        "nodejs",
+        "js",
+        "javascript"
+    ],
+    "author": "Ketzenkrad",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "nodemon": "^1.19.1"
+    }
 }
