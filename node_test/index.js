@@ -29,3 +29,6 @@ application.listen(3000, () => {
     //Лог для консоли
     console.log('Server is started on localhost:3000/');
 });
+
+//API-ключ с OpenWeatherMap
+//c46f408d6d5e97eed3a527103eb02025
