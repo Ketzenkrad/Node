@@ -12,8 +12,19 @@
 <body>
     <div class="app">
         <div class="app__header">
-            <h3 class="">Title</h3>
-            <p class="error">Error!</p>
+            <!-- Проверка условий -->
+            <% if (weather){ %>
+                <!-- Рендер переменной -->
+                <h3 class="">
+                    <%=weather%>
+                </h3>
+                <% } %>
+                    <!-- Рендер ошибки -->
+                    <% if (error){ %>
+                        <p class="error">
+                            <%=error%>
+                        </p>
+                        <% } %>
         </div>
         <form action="/" method="post" class="app__content">
             <div class="input">

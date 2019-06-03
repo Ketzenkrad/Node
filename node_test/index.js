@@ -15,7 +15,10 @@ application.use(bodyParser.urlencoded({ extended: true }));
 //Ответим пользователю через коллбэк
 application.get('/', (req, res) => {
     //При запросе на корневой элемент рендерим индексный файл
-    res.render('index');
+    res.render('index', {
+        weather: null,
+        error: null
+    });
 });
 //Обработаем POST запрос
 application.post('/', async(req, res) => {
@@ -27,10 +30,10 @@ application.post('/', async(req, res) => {
     //Деструктуризация объекта на погоду и ошибку + асинхронность для функции
     const { weather, error } = await weatherRequest(city);
     //Консольные логи для погоды и ошибки
-    console.log('Weather ', weather);
-    console.log('Error ', error);
+    //console.log('Weather ', weather);
+    //console.log('Error ', error);
     //Возвращаем с отрендеренными данными
-    res.render('index');
+    res.render('index', { weather, error });
 });
 //Слушаем приложение(порт и коллбэк)
 application.listen(3000, () => {
