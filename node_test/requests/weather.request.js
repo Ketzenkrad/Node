@@ -41,7 +41,7 @@ module.exports = async function(city = '') {
         return {
             //берем из API-ответа
             //toFixed(0) - округляем
-            weather: `${data.name}: ${celsius.toFixed(0)}`,
+            weather: `${data.name}: ${celsius.toFixed(0)} C`,
             error: null
         }
     } catch (error) {
