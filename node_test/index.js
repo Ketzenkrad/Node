@@ -18,15 +18,19 @@ application.get('/', (req, res) => {
     res.render('index');
 });
 //Обработаем POST запрос
-application.post('/', (req, res) => {
-    //Возвращаем с отрендеренными данными
-    res.render('index');
+application.post('/', async(req, res) => {
     //Получим через константу из HTML:
     const { city } = req.body;
     //Посмотрим в консоли на результат:
     console.log('Result: ' + city);
     //Вызовем функцию WeatherRequest и передаем туда город
-    weatherRequest(city);
+    //Деструктуризация объекта на погоду и ошибку + асинхронность для функции
+    const { weather, error } = await weatherRequest(city);
+    //Консольные логи для погоды и ошибки
+    console.log('Weather ', weather);
+    console.log('Error ', error);
+    //Возвращаем с отрендеренными данными
+    res.render('index');
 });
 //Слушаем приложение(порт и коллбэк)
 application.listen(3000, () => {
